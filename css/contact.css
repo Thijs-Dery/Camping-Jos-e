@@ -191,3 +191,32 @@ input[type="text" i] {
         height: 100px;
     }
 }
+
+@media only screen and (max-width: 750px){
+
+    .pos_input {
+        width: 300px;
+        position: absolute;
+        margin: 0 auto;
+        margin-top: 290px;
+    }
+
+    .pos_input2 {
+        width: 300px;
+        position: absolute;
+        margin:0 auto;
+        margin-top: 300px;
+    }
+
+    .pos_input3 {
+        width: 300px;
+        position: absolute;
+        margin: 0 auto;
+        margin-top: 370px;
+    }
+
+    #container.posinputcont {
+        margin-top: -150px;
+        width: 300px;
+    }
+}

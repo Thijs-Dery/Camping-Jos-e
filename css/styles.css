@@ -892,5 +892,15 @@ body {
         font-size: 10px;
     }
 
+    .eventsearch_area {
+        padding: 0px;
+    }
+}
 
+@media only screen and (max-width: 400px){
+    .h1_textcantine h1{
+        font-size: 20px;
+    }
+
+    
 }
