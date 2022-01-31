@@ -77,8 +77,6 @@ body {
     border-radius: 7px;
     background-color: #d5d9dd;
 
-
-
 }
 
 .more_card a {
@@ -689,6 +687,7 @@ body {
 
     .buttons_scroll {
         display: flex;
+        flex-direction: row;
         overflow-y: hidden;
         overflow-x: scroll;
 
@@ -972,6 +971,42 @@ body {
 
     .eventsearch_area {
         padding: 0px;
+    }
+
+    .card_position p {
+        font-size: 4px;
+    }
+
+    .event_card {
+        width: 375px;
+        height: 150px;
+        border-radius: 0px;
+    }
+
+    .search_buttons {
+        display: flex;
+        overflow: hidden;
+
+    }
+
+    .buttons_scroll {
+        display: flex;
+        flex-direction: row;
+        overflow-y: hidden;
+        overflow-x: scroll;
+
+    }
+
+    .search_buttons a {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        text-transform: uppercase;
+        max-height: 50px;
+        font-size: 20px;
+        padding: 15px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 }
 
