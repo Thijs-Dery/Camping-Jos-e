@@ -26,11 +26,11 @@ body {
 
 }
 
-.h1_more{
+.h1_more {
     font-family: 'Poppins', sans-serif;
     color: black;
-    text-transform: uppercase; 
-    text-align: left; 
+    text-transform: uppercase;
+    text-align: left;
     margin-left: 10px;
 
 }
@@ -91,7 +91,7 @@ body {
 }
 
 .more_card a:hover {
-   text-decoration: underline;
+    text-decoration: underline;
 }
 
 .profile_area {
@@ -124,7 +124,7 @@ body {
 }
 
 .topnav {
-    background-color: rgba(44, 62, 80, 0.03); 
+    background-color: rgba(44, 62, 80, 0.03);
     padding-bottom: 25px;
     width: 100%;
 
@@ -153,12 +153,12 @@ body {
     background-color: rgba(44, 62, 80, 0.05);
     padding: 15px;
     border-radius: 25px;
-    margin-right: 45px; 
+    margin-right: 45px;
     transition: 200ms ease-out;
 }
 
 .topnav_right:hover {
-    background-color: rgba(44, 62, 80, 0.25); 
+    background-color: rgba(44, 62, 80, 0.25);
 
 }
 
@@ -195,7 +195,7 @@ body {
     background-image: url(../images/foto\ 4.png);
     background-size: cover;
     margin-top: 0px;
-    
+
 }
 
 .headerimg h1 {
@@ -210,14 +210,14 @@ body {
 
 .headerimg p {
     font-family: 'Poppins', sans-serif;
-    color: white;    
+    color: white;
     text-align: center;
     font-size: 15px;
     letter-spacing: 5px;
 
 }
 
-.button_header {    
+.button_header {
     text-align: center;
 
 }
@@ -237,8 +237,8 @@ body {
 
 .button_header a:hover {
     color: white;
-    background-color: #9b59b6; 
-    box-shadow: 0px 0px 26px 6px rgba(0,0,0,0.35);
+    background-color: #9b59b6;
+    box-shadow: 0px 0px 26px 6px rgba(0, 0, 0, 0.35);
 
 }
 
@@ -271,7 +271,7 @@ body {
 .eventsearch_area h1 {
     font-family: 'Poppins', sans-serif;
     color: black;
-    
+
 
 }
 
@@ -328,24 +328,24 @@ body {
 .event_card:hover {
     cursor: pointer;
     background-color: #e9ebed93;
-    transform: scale(1.03); 
+    transform: scale(1.03);
 
 }
 
-.eventtext h1 { 
+.eventtext h1 {
     font-family: 'Poppins', sans-serif;
     color: black;
     text-transform: uppercase;
-    font-size: 15px;
+    font-size: 22px;
 
 
 }
 
 .eventtext p {
     font-family: 'Poppins', sans-serif;
-    color: black; 
-    font-size: 12px;   
-    
+    color: black;
+    font-size: 17px;
+    margin-top: -5px;
 
 }
 
@@ -361,10 +361,11 @@ body {
     width: 400px;
     padding: 5px;
     border-radius: 25px;
-    font-size: 12px;
+    font-size: 15px;
     width: auto;
     text-transform: uppercase;
     margin-right: 15px;
+    margin-top: -10px;
 
 }
 
@@ -398,17 +399,18 @@ body {
 .tags_event p {
     margin-right: 15px;
     text-transform: uppercase;
-    font-size: 10px;
+    font-size: 15px;
     padding: 6px;
     border-radius: 7px;
     background-color: rgba(155, 89, 182, 0.3);
+    margin-top: -10px;
 
 }
 
 
 /* MEDIA QUERIES */
 
-@media only screen and ( max-width: 750px) {
+@media only screen and (max-width: 750px) {
 
     .topnav {
         display: flex;
@@ -472,7 +474,7 @@ body {
 
     }
 
-    .button_header a{
+    .button_header a {
         font-size: 15px;
         transition: 0ms;
 
@@ -504,7 +506,8 @@ body {
 
     }
 
-    .events_area h1 ,p{
+    .events_area h1,
+    p {
         text-align: center;
 
     }
@@ -550,7 +553,7 @@ body {
 
 }
 
-@media only screen and (max-width: 1600px){
+@media only screen and (max-width: 1600px) {
     .card_position {
         display: flex;
         flex-direction: column;
@@ -560,7 +563,7 @@ body {
     }
 }
 
-@media only screen and (max-width: 1300px){
+@media only screen and (max-width: 1300px) {
     .card_position {
         display: flex;
         flex-direction: column;
@@ -569,78 +572,152 @@ body {
         margin-left: 0%;
     }
 
-    .event_card{
-        border-radius: 0px 0px 0px 0px;      
-    }
-
-    .event_card img{
+    .event_card {
         border-radius: 0px 0px 0px 0px;
     }
 
+    .event_card img {
+        border-radius: 0px 0px 0px 0px;
+    }
+
+    .event_card p {
+        font-size: 14px;
+    }
+
+    .tags_event p {
+        margin-top: -2px;
+    }
+
+}
+
+@media screen and (max-width: 1720) {}
+
+@media only screen and (max-width: 1050px) {
+
+    .event_card p {
+        font-size: 17px;
+    }
+
+}
+
+@media only screen and (max-width: 930px) {
+    .event_card p {
+        font-size: 17px;
+    }
+
+    .event_card h1 {
+        font-size: 20px;
+    }
+
+    .tags_event p {
+        margin-top: 7px;
+    }
 }
 
 
 
 
 
-
-@media only screen and (max-width: 1075px){
-    .card_position p{
+@media only screen and (max-width: 1075px) {
+    .card_position p {
         font-size: 9px;
     }
-    
+
 }
 
-@media only screen and (max-width: 900px){
-    .card_position p{
+@media only screen and (max-width: 900px) {
+    .card_position p {
         font-size: 7px;
     }
 
-    .search_buttons{
+    .search_buttons {
         font-size: 7px;
     }
 
-    .eventtext p{
+    .eventtext p {
         max-width: 220px;
     }
 }
 
-@media only screen and (max-width: 517px){
-    
-    .search_buttons{
+@media only screen and (max-width: 517px) {
+
+    .search_buttons {
         font-size: 5px;
     }
 
-    
 
-    .event_card img{
+
+    .event_card img {
         width: 150px;
         height: 150px;
     }
 
 }
 
-@media only screen and (max-width: 400px){
-    .card_position p{
-        font-size: 4px;
-    }
-    
-    .event_card{
-        width: 375px;
-        height: 150px;
-        border-radius: 0px;
-    }
+
+
+
+
+
+.buttons_scroll {
+    display: flex;
+    flex-direction: column;
 }
 
 
 
 
 
-@media only screen and (min-width: 3000px){
-    .eventsearch_area{
+
+@media only screen and (max-width: 400px) {
+
+    .card_position p {
+        font-size: 4px;
+    }
+
+    .event_card {
+        width: 375px;
+        height: 150px;
+        border-radius: 0px;
+    }
+
+    .search_buttons {
+        display: flex;
+        overflow: hidden;
+
+    }
+
+    .buttons_scroll {
+        display: flex;
+        overflow-y: hidden;
+        overflow-x: scroll;
+
+    }
+
+    .search_buttons a {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        text-transform: uppercase;
+        max-height: 50px;
+        font-size: 20px;
+        padding: 15px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+}
+
+
+
+
+
+
+@media only screen and (min-width: 3000px) {
+    .eventsearch_area {
         height: 1000px;
     }
-    
+
 }
 
 .about_cantine {
@@ -653,6 +730,7 @@ body {
     flex-direction: row;
 
 }
+
 .h1_textcantine #new {
     background-color: #ffc03a;
     color: white;
@@ -664,7 +742,7 @@ body {
 .about_cantine h1 {
     font-family: 'Poppins', sans-serif;
     color: black;
-    text-transform: uppercase; 
+    text-transform: uppercase;
     text-align: left;
     margin-left: 15px;
 
@@ -694,7 +772,7 @@ body {
     color: #9b59b6;
     border-radius: 15px;
     padding: 5px;
-    transition: 200ms; 
+    transition: 200ms;
 
 }
 
@@ -811,7 +889,6 @@ body {
     font-family: 'Poppins', sans-serif;
     color: black;
     text-transform: none
-
 }
 
 .imgspons {
@@ -861,14 +938,16 @@ body {
 
 @keyframes newlogo {
     0% {
-       background-color: #ffc03a;
-       transform: scale(1); 
+        background-color: #ffc03a;
+        transform: scale(1);
     }
+
     50% {
         background-color: #ffd885;
         transform: scale(1.02);
 
     }
+
     100% {
         transform: scale(1);
 
@@ -878,16 +957,16 @@ body {
 /*  */
 
 
-@media only screen and (max-width: 750px){
-    .sponmarg{
-        margin-right:10px;
+@media only screen and (max-width: 750px) {
+    .sponmarg {
+        margin-right: 10px;
     }
 
-    .footerwhite p{
+    .footerwhite p {
         font-size: 5px;
     }
 
-    .footerwhite h1{
+    .footerwhite h1 {
         font-size: 10px;
     }
 
@@ -896,10 +975,10 @@ body {
     }
 }
 
-@media only screen and (max-width: 400px){
-    .h1_textcantine h1{
+@media only screen and (max-width: 400px) {
+    .h1_textcantine h1 {
         font-size: 20px;
     }
 
-    
+
 }
