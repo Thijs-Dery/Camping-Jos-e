@@ -5,6 +5,11 @@
 
 /*  */
 
+html {
+    scrollbar-width: none;
+
+}
+
 body {
     margin: 0;
 
@@ -12,7 +17,7 @@ body {
 
 .events_area {
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     background-image: url(../images/background_event3.jpg);
     background-size: cover;
 
@@ -148,7 +153,7 @@ body {
     margin-top: 40px;
     float: right;
     text-align: right;
-    background-color: rgba(44, 62, 80, 0.05);
+    background-color: #f6f6f6;
     padding: 15px;
     border-radius: 25px;
     margin-right: 45px;
@@ -156,7 +161,7 @@ body {
 }
 
 .topnav_right:hover {
-    background-color: rgba(44, 62, 80, 0.25);
+    background-color: #f1f1f1;
 
 }
 
@@ -240,12 +245,6 @@ body {
 
 }
 
-.events_area {
-    display: flex;
-    flex-direction: row;
-
-}
-
 .search_buttons {
     display: flex;
     flex-direction: column;
@@ -257,6 +256,8 @@ body {
     width: 250px;
     background-color: #e8eef3;
     padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
     transition: 200ms ease-in;
     border-radius: 0px 0px 10px 7px;
 }
@@ -283,7 +284,6 @@ body {
     font-family: 'Poppins', sans-serif;
     text-decoration: none;
     color: black;
-    background-color: rgba(131, 131, 131, 0.1);
     padding: 10px;
     margin-bottom: 15px;
     border-radius: 25px;
@@ -292,7 +292,7 @@ body {
 }
 
 .eventsearch_area a:hover {
-    background-color: rgba(155, 89, 182, 0.3);
+    background-color: #e4eaee;
 }
 
 #active {
@@ -301,109 +301,193 @@ body {
 
 }
 
-.card_position {
+.column {
     display: flex;
     flex-direction: column;
-    max-width: 100%;
-    overflow: hidden;
-    margin-left: 30%;
+    height: 600px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: none;
 
 }
 
-.event_card {
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
-    height: 220px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    border-radius: 7px 0px 0px 7px;
-    background-color: #e8eef3;
-    transition: 200ms ease-in;
-
-}
-
-.event_card:hover {
-    cursor: pointer;
-    background-color: #e9ebed93;
-    transform: scale(1.03);
-
-}
-
-.eventtext h1 {
-    font-family: 'Poppins', sans-serif;
-    color: black;
-    text-transform: uppercase;
-    font-size: 22px;
-
-
-}
-
-.eventtext p {
-    font-family: 'Poppins', sans-serif;
-    color: black;
-    font-size: 17px;
-    margin-top: -5px;
-
-}
-
-.data_event {
-    display: flex;
-    flex-direction: row;
-
-}
-
-.data_event p {
-    font-size: 12px;
-    background-color: rgba(189, 195, 199, 0.6);
-    width: 400px;
-    padding: 5px;
-    border-radius: 25px;
-    font-size: 15px;
+.eventsblock {
+    margin: 0 auto;
     width: auto;
-    text-transform: uppercase;
-    margin-right: 15px;
-    margin-top: -10px;
+    height: auto;
+    text-align: center;
+    margin-top: 20px;
+
 
 }
 
-.event_card img {
-    width: 250px;
-    height: auto;
-    border-radius: 7px 0px 0px 7px;
+.eventcardsrow1 {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.eventcardsrow2 {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.eventcardsrow3 {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.eventcardsrow4 {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.eventcardsrow5 {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.eventcardsrow6 {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.eventcardsrow7 {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.eventcardsrow8 {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.eventcardsrow9 {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.eventcardsrow10 {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.eventcard {
+    margin: 25px;
+
+}
+
+#event01 {
+    background-image: url(../images/foto\ 10.jpg);
+    border-radius: 3px;
+
+}
+
+#event02 {
+    background-image: url(../images/foto\ 2.jpg);
+    border-radius: 3px;
+
+}
+
+#event03 {
+    background-image: url(../images/foto\ 8.jpg);
+    border-radius: 3px;
+}
+
+#event04 {
+    background-image: url(../images/foto\ 15.jpg);
+    border-radius: 3px;
+
+}
+
+#event05 {
+    background-image: url(../images/foto\ 12.jpg);
+    border-radius: 3px;
+
+}
+
+#event06 {
+    background-image: url(../images/foto\ 9.jpg);
+    border-radius: 3px;
+
+}
+
+.eventimage {
+    overflow: hidden;
+    background-size: cover;
+    width: 550px;
+    height: 350px;
     filter: brightness(80%);
     transition: 200ms ease-in;
 
 }
 
-.event_card img:hover {
+.eventimage:hover {
+    cursor: pointer;
     filter: brightness(100%);
-    transform: scale(1.1);
+    transform: scale(1.02);
 
 }
 
-.eventtext {
-    margin-left: 25px;
-    margin-right: 15px;
+.previewtext h1 {
+    color: white;
+    margin-top: 65px;
+    padding-top: 15px;
+    text-transform: uppercase;
+    font-size: 20px;
 
 }
 
-.tags_event {
+.previewtext hr {    
+    width: 400px;
+    border: 1px solid white;
+    margin-bottom: 10px;
+    margin-top: 25px;
+    opacity: 30%;
+    
+}
+
+.previewtext {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+.eventtextpre {
+    padding: 15px;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+
+}
+
+.tagsarea {
     display: flex;
     flex-direction: row;
-
+    justify-content: center;
+    /* background-color: rgba(0, 0, 0, 0.5); */
 }
 
-.tags_event p {
+.tagsarea p {
     margin-right: 15px;
-    text-transform: uppercase;
-    font-size: 15px;
-    padding: 6px;
-    border-radius: 7px;
-    background-color: rgba(155, 89, 182, 0.3);
-    margin-top: -10px;
+    font-size: 12px;
+    padding: 5px;
+    border-radius: 25px;
+    background-color: #cdabda;
 
 }
+
 
 
 /* MEDIA QUERIES */
@@ -545,6 +629,7 @@ body {
         flex-direction: row;
         overflow-y: hidden;
         overflow-x: scroll;
+
 
     }
 
@@ -811,6 +896,15 @@ body {
 /*  */
 
 
+@media only screen and (min-width: 750px) {
+    .search_buttons a {
+        font-size: 15px;
+
+    }
+
+}
+
+
 @media only screen and (max-width: 750px) {
      
     .topnav {
@@ -891,6 +985,7 @@ body {
         display: flex;
         flex-direction: column;
         width: 100%;
+        border-radius: 0px;
 
     }
 
@@ -989,6 +1084,7 @@ body {
         flex-direction: row;
         overflow-y: hidden;
         overflow-x: scroll;
+        scrollbar-width: none;
 
     }
 

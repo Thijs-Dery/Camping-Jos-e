@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <script src="scripts/script.js"></script>
+    <script type="text/javascript" src="jquery-1.3.2.min.js"></script>
     <title>Document</title>
 </head>
 
@@ -40,7 +41,7 @@
                 <div class="header_spacer"></div>
                 <div class="search_buttons">
                     <div class="buttons_scroll">
-                        <a href="theater.html#events">Theater</a>
+                        <a href="theater.html#events" id="active">Theater</a>
                         <a href="kinderen.html#events">Kinderen</a>
                         <a href="volwassenen.html#events">Volwassenen</a>
                         <a href="films.html#events">Films</a>
@@ -52,64 +53,121 @@
                     </div>
                 </div>
             </div>
-            <div class="card_position">
-                <div class="event_card">
-                    <img class="imagecard1" src="images/foto 2.jpg" alt="event_theater_buiten">
-                    <div class="eventtext">
-                        <div class="header_spacer"></div>
-                        <h1>Theater voorstelling: "Vogel op een tak."</h1>
-                        <div class="data_event">
-                            <p>📅 Datum: 05/02/2022</p>
-                            <p>📍 Locatie: Parc Saint-François, Rue de la Poste 51, 1030 Schaerbeek</p>
+            <div class="eventsblock">
+                <div class="column">
+                    <div class="eventcardsrow1">
+                        <div class="eventcard">
+                            <div class="eventimage" id="event01">
+                                <div class="previewtext">
+                                    <h1>Eetfestijn: Spaanse gerechten.</h1>
+                                    <hr>
+                                    <div class="eventtextpre">
+                                        📅 Datum: 09/03/2022
+                                        <br>
+                                        📍 Locatie: RUE DE LA LIMITE 67, 1210 SAINT-JOSSE-TEN-NOODE
+                                    </div>
+                                    <div class="tagsarea">
+                                        <p class="tag">Eten en drinken</p>
+                                        <p class="tag">Buiten</p>
+                                        <p class="tag">Muziek</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <p class="maxpwidth">"Vogel op een tak" is een opvoering geschreven door
-                            Jan Pennik, een Belgische schrijver dat zich focust
-                            op het schrijven van kinderverhalen."</p>
-                        <div class="tags_event">
-                            <p>theater</p>
-                            <p>buiten</p>
-                            <p>muziek</p>
+                        <div class="eventcard">
+                            <div class="eventimage" id="event02">
+                                <div class="previewtext">
+                                    <h1>Theater Voorstelling: Een vogel op een tak.</h1>
+                                    <hr>
+                                    <div class="eventtextpre">
+                                        📅 Datum: 05/02/2022
+                                        <br>
+                                        📍 Locatie: Rue Botanique 1210 Saint-Josse-ten-Noode
+
+                                    </div>
+                                    <div class="tagsarea">
+                                        <p class="tag">Theater</p>
+                                        <p class="tag">Buiten</p>
+                                        <p class="tag">Muziek</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="event_card">
-                    <img src="images/foto 8.jpg" alt="event_theater_buiten">
-                    <div class="eventtext">
-                        <div class="header_spacer"></div>
-                        <h1>Muziek op straat: "Fanfare Jos en Ed"</h1>
-                        <div class="data_event">
-                            <p>📅 Datum: 15/02/2022</p>
-                            <p>📍 Locatie:
-                                Rue Traversière 1210 Saint-Josse-ten-Noode </p>
+                    <div class="eventcardsrow2">
+                        <div class="eventcard">
+                            <div class="eventimage" id="event03">
+                                <div class="previewtext">
+                                    <h1>Muziek op straat: Fanfare Jos en Ed.</h1>
+                                    <hr>
+                                    <div class="eventtextpre">
+                                        📅 Datum: 15/02/2022
+                                        <br>
+                                        📍 Locatie: RUE TRAVERSIÈRE 1210 SAINT-JOSSE-TEN-NOODE
+
+                                    </div>
+                                    <div class="tagsarea">
+                                        <p class="tag">Buiten</p>
+                                        <p class="tag">Muziek</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <p class="maxpwidth">"Jos en Ed zijn weer van de partij!
-                            Zo brengen ze samen met hun fanfare band
-                            leuke en bekende nummers!"</p>
-                        <div class="tags_event">
-                            <p>buiten</p>
-                            <p>muziek</p>
+                        <div class="eventcard">
+                            <div class="eventimage" id="event04">
+                                <div class="previewtext">
+                                    <h1>Bart De Bouwer - 'Freddej, Gebrukt aa woeterpas!'</h1>
+                                    <hr>
+                                    <div class="eventtextpre">
+                                        📅 Datum: 25/02/2022
+                                        <br>
+                                        📍 Locatie: Pl. Quetelet 7, 1210 Saint-Josse-ten-Noode
+
+                                    </div>
+                                    <div class="tagsarea">
+                                        <p class="tag">Muziek</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="event_card">
-                    <img src="images/foto 10.jpg" alt="event_theater_buiten">
-                    <div class="eventtext">
-                        <div class="header_spacer"></div>
-                        <h1>Eetfestijn: "Spaanse Gerechten"</h1>
-                        <div class="data_event">
-                            <p>📅 Datum: 09/03/2022</p>
-                            <p>📍 Locatie: Rue de la Limite 67, 1210 Saint-Josse-ten-Noode</p>
+                    <div class="eventcardsrow3">
+                        <div class="eventcard">
+                            <div class="eventimage" id="event05">
+                                <div class="previewtext">
+                                    <h1>Ouderschap bijeenkomst: Hoe ga ik om met mijn kind?</h1>
+                                    <hr>
+                                    <div class="eventtextpre">
+                                        📅 Datum: 12/03/2022
+                                        <br>
+                                        📍 Locatie: Rue de la Poste 51, 1030 Schaerbeek
+
+                                    </div>
+                                    <div class="tagsarea">
+                                        <p class="tag">Volwassenen</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <p class="maxpwidth">"Van Tapas tot Paella, met een glaasje Sangria erbij nodigen
-                            we jullie allemaal uit voor een gezellig eetfestijn met
-                            kinderanimatie en muziek!"</p>
-                        <div class="tags_event">
-                            <p>eten & drinken</p>
-                            <p>kinderen</p>
-                            <p>volwassenen</p>
-                            <p>muziek</p>
+                        <div class="eventcard">
+                            <div class="eventimage" id="event06">
+                                <div class="previewtext">
+                                    <h1>Opvang: Mama Josée.</h1>
+                                    <hr>
+                                    <div class="eventtextpre">
+                                        📅 Datum: 04/04/2022
+                                        <br>
+                                        📍 Locatie: Rue de la Limite 67, 1210 Sint-Joost-ten-Node
+
+                                    </div>
+                                    <div class="tagsarea">
+                                        <p class="tag">Indoor</p>
+                                        <p class="tag">Kinderen</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
