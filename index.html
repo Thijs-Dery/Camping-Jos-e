@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="scripts/script.js"></script>
-    <script type="text/javascript" src="scripts/jquery-1.3.2.min.js"></script>
+    <link rel="stylesheet" href="css/filter.css">
+    <script type="module" src="scripts/script.js"></script>
     <title>Document</title>
 </head>
 
@@ -40,398 +40,444 @@
                 <p>Ik zoek naar:</p>
                 <div class="header_spacer"></div>
                 <div class="search_buttons">
-                    <div class="buttons_scroll">
-                        <a href="theater.html#events">Theater</a>
-                        <a href="kinderen.html#events">Kinderen</a>
-                        <a href="volwassenen.html#events">Volwassenen</a>
-                        <a href="films.html#events">Films</a>
-                        <a href="muziek.html#events">Muziek</a>
-                        <a href="buiten.html#events">Buiten</a>
-                        <a href="eten.html#events">Eten & Drinken</a>
-                        <a href="indoor.html#events">Indoor</a>
+                    <div class="buttons_scroll" id="knoppen">
+                        <a class="btn actief" onclick="filterSelection('all')">Toon alles</a>
+                        <a class="btn" onclick="filterSelection('theater')"> Theater</a>
+                        <a class="btn" onclick="filterSelection('kinderen')"> Kinderen</a>
+                        <a class="btn" onclick="filterSelection('volwassenen')">Volwassenen</a>
+                        <a class="btn" onclick="filterSelection('films')">Films</a>
+                        <a class="btn" onclick="filterSelection('muziek')">Muziek</a>
+                        <a class="btn" onclick="filterSelection('buiten')">Buiten</a>
+                        <a class="btn" onclick="filterSelection('etendrinken')">Eten & drinken</a>
+                        <a class="btn" onclick="filterSelection('indoor')">Indoor</a>
                         <div class="header_spacer"></div>
                     </div>
                 </div>
+
             </div>
+
+            <script>
+                filterSelection("all")
+
+                function filterSelection(c) {
+                    var x, i;
+                    x = document.getElementsByClassName("eventcard");
+                    if (c == "all") c = "";
+                    for (i = 0; i < x.length; i++) {
+                        removeClass(x[i], "show");
+                        if (x[i].className.indexOf(c) > -1) addClass(x[i], "show");
+                    }
+                }
+
+                function addClass(element, name) {
+                    var i, arr1, arr2;
+                    arr1 = element.className.split(" ");
+                    arr2 = name.split(" ");
+                    for (i = 0; i < arr2.length; i++) {
+                        if (arr1.indexOf(arr2[i]) == -1) {
+                            element.className += " " + arr2[i];
+                        }
+                    }
+                }
+
+                function removeClass(element, name) {
+                    var i, arr1, arr2;
+                    arr1 = element.className.split(" ");
+                    arr2 = name.split(" ");
+                    for (i = 0; i < arr2.length; i++) {
+                        while (arr1.indexOf(arr2[i]) > -1) {
+                            arr1.splice(arr1.indexOf(arr2[i]), 1);
+                        }
+                    }
+                    element.className = arr1.join(" ");
+                }
+
+                // Add active class to the current button (highlight it)
+                var btnContainer = document.getElementById("knoppen");
+                var btns = btnContainer.getElementsByClassName("btn");
+                for (var i = 0; i < btns.length; i++) {
+                    btns[i].addEventListener("click", function () {
+                        var current = document.getElementsByClassName("actief");
+                        current[0].className = current[0].className.replace(" actief", "");
+                        this.className += " actief";
+                    });
+                }
+            </script>
+
             <div class="eventsblock">
                 <div class="column">
-                    <div class="eventcardsrow1">
-                        <div class="eventcard">
-                            <div class="eventimage" id="event01">
-                                <div class="previewtext">
-                                    <h1>.evenement1</h1>
-                                    <hr>
-                                    <div class="eventtextpre">
-                                        📅 Datum: 09/03/2022
-                                        <br>
-                                        📍 Locatie: RUE DE LA LIMITE 67, 1210 SAINT-JOSSE-TEN-NOODE
-                                    </div>
-                                    <div class="tagsarea">
-                                        <p class="tag">Eten en drinken</p>
-                                        <p class="tag">Buiten</p>
-                                        <p class="tag">Muziek</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="eventcard">
-                            <div class="eventimage" id="event02">
-                                <div class="previewtext">
-                                    <h1>Theater Voorstelling: Een vogel op een tak.</h1>
-                                    <hr>
-                                    <div class="eventtextpre">
-                                        📅 Datum: 05/02/2022
-                                        <br>
-                                        📍 Locatie: Rue Botanique 1210 Saint-Josse-ten-Noode
 
-                                    </div>
-                                    <div class="tagsarea">
-                                        <p class="tag">Theater</p>
-                                        <p class="tag">Buiten</p>
-                                        <p class="tag">Muziek</p>
-                                    </div>
+                    <div class="eventcard etendrinken buiten muziek">
+                        <div class="eventimage" id="event01">
+                            <div class="previewtext">
+                                <h1>.evenement1</h1>
+                                <hr>
+                                <div class="eventtextpre">
+                                    📅 Datum: 09/03/2022
+                                    <br>
+                                    📍 Locatie: RUE DE LA LIMITE 67, 1210 SAINT-JOSSE-TEN-NOODE
+                                </div>
+                                <div class="tagsarea">
+                                    <p class="tag">Eten en drinken</p>
+                                    <p class="tag">Buiten</p>
+                                    <p class="tag">Muziek</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="eventcardsrow2">
-                        <div class="eventcard">
-                            <div class="eventimage" id="event03">
-                                <div class="previewtext">
-                                    <h1>Muziek op straat: Fanfare Jos en Ed.</h1>
-                                    <hr>
-                                    <div class="eventtextpre">
-                                        📅 Datum: 15/02/2022
-                                        <br>
-                                        📍 Locatie: RUE TRAVERSIÈRE 1210 SAINT-JOSSE-TEN-NOODE
+                    <div class="eventcard theater buiten muziek ">
+                        <div class="eventimage" id="event02">
+                            <div class="previewtext">
+                                <h1>Theater Voorstelling: Een vogel op een tak.</h1>
+                                <hr>
+                                <div class="eventtextpre">
+                                    📅 Datum: 05/02/2022
+                                    <br>
+                                    📍 Locatie: Rue Botanique 1210 Saint-Josse-ten-Noode
 
-                                    </div>
-                                    <div class="tagsarea">
-                                        <p class="tag">Buiten</p>
-                                        <p class="tag">Muziek</p>
-                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="eventcard">
-                            <div class="eventimage" id="event04">
-                                <div class="previewtext">
-                                    <h1>Bart De Bouwer - 'Freddej, Gebrukt aa woeterpas!'</h1>
-                                    <hr>
-                                    <div class="eventtextpre">
-                                        📅 Datum: 25/02/2022
-                                        <br>
-                                        📍 Locatie: Pl. Quetelet 7, 1210 Saint-Josse-ten-Noode
-
-                                    </div>
-                                    <div class="tagsarea">
-                                        <p class="tag">Muziek</p>
-                                    </div>
+                                <div class="tagsarea">
+                                    <p class="tag">Theater</p>
+                                    <p class="tag">Buiten</p>
+                                    <p class="tag">Muziek</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="eventcardsrow3">
-                        <div class="eventcard">
-                            <div class="eventimage" id="event05">
-                                <div class="previewtext">
-                                    <h1>Ouderschap bijeenkomst: Hoe ga ik om met mijn kind?</h1>
-                                    <hr>
-                                    <div class="eventtextpre">
-                                        📅 Datum: 12/03/2022
-                                        <br>
-                                        📍 Locatie: Rue de la Poste 51, 1030 Schaerbeek
+                    <div class="eventcard buiten muziek">
+                        <div class="eventimage" id="event03">
+                            <div class="previewtext">
+                                <h1>Muziek op straat: Fanfare Jos en Ed.</h1>
+                                <hr>
+                                <div class="eventtextpre">
+                                    📅 Datum: 15/02/2022
+                                    <br>
+                                    📍 Locatie: RUE TRAVERSIÈRE 1210 SAINT-JOSSE-TEN-NOODE
 
-                                    </div>
-                                    <div class="tagsarea">
-                                        <p class="tag">Volwassenen</p>
-                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="eventcard">
-                            <div class="eventimage" id="event06">
-                                <div class="previewtext">
-                                    <h1>Opvang: Mama Josée.</h1>
-                                    <hr>
-                                    <div class="eventtextpre">
-                                        📅 Datum: 04/04/2022
-                                        <br>
-                                        📍 Locatie: Rue de la Limite 67, 1210 Sint-Joost-ten-Node
-
-                                    </div>
-                                    <div class="tagsarea">
-                                        <p class="tag">Indoor</p>
-                                        <p class="tag">Kinderen</p>
-                                    </div>
+                                <div class="tagsarea">
+                                    <p class="tag">Buiten</p>
+                                    <p class="tag">Muziek</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="eventcardsrow4">
-                        <div class="eventcard">
-                            <div class="eventimage" id="event05">
-                                <div class="previewtext">
-                                    <h1>Ouderschap bijeenkomst: Hoe ga ik om met mijn kind?</h1>
-                                    <hr>
-                                    <div class="eventtextpre">
-                                        📅 Datum: 12/03/2022
-                                        <br>
-                                        📍 Locatie: Rue de la Poste 51, 1030 Schaerbeek
+                    <div class="eventcard muziek buiten">
+                        <div class="eventimage" id="event04">
+                            <div class="previewtext">
+                                <h1>Bart De Bouwer - 'Freddej, Gebrukt aa woeterpas!'</h1>
+                                <hr>
+                                <div class="eventtextpre">
+                                    📅 Datum: 25/02/2022
+                                    <br>
+                                    📍 Locatie: Pl. Quetelet 7, 1210 Saint-Josse-ten-Noode
 
-                                    </div>
-                                    <div class="tagsarea">
-                                        <p class="tag">Volwassenen</p>
-                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="eventcard">
-                            <div class="eventimage" id="event06">
-                                <div class="previewtext">
-                                    <h1>Opvang: Mama Josée.</h1>
-                                    <hr>
-                                    <div class="eventtextpre">
-                                        📅 Datum: 04/04/2022
-                                        <br>
-                                        📍 Locatie: Rue de la Limite 67, 1210 Sint-Joost-ten-Node
-
-                                    </div>
-                                    <div class="tagsarea">
-                                        <p class="tag">Indoor</p>
-                                        <p class="tag">Kinderen</p>
-                                    </div>
+                                <div class="tagsarea">
+                                    <p class="tag">Muziek</p>
+                                    <p class="tag">Buiten</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="eventcardsrow5">
-                        <div class="eventcard">
-                            <div class="eventimage" id="event05">
-                                <div class="previewtext">
-                                    <h1>Ouderschap bijeenkomst: Hoe ga ik om met mijn kind?</h1>
-                                    <hr>
-                                    <div class="eventtextpre">
-                                        📅 Datum: 12/03/2022
-                                        <br>
-                                        📍 Locatie: Rue de la Poste 51, 1030 Schaerbeek
+                    <div class="eventcard indoor kinderen">
+                        <div class="eventimage" id="event05">
+                            <div class="previewtext">
+                                <h1>Ouderschap bijeenkomst: Hoe ga ik om met mijn kind?</h1>
+                                <hr>
+                                <div class="eventtextpre">
+                                    📅 Datum: 12/03/2022
+                                    <br>
+                                    📍 Locatie: Rue de la Poste 51, 1030 Schaerbeek
 
-                                    </div>
-                                    <div class="tagsarea">
-                                        <p class="tag">Volwassenen</p>
-                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="eventcard">
-                            <div class="eventimage" id="event06">
-                                <div class="previewtext">
-                                    <h1>Opvang: Mama Josée.</h1>
-                                    <hr>
-                                    <div class="eventtextpre">
-                                        📅 Datum: 04/04/2022
-                                        <br>
-                                        📍 Locatie: Rue de la Limite 67, 1210 Sint-Joost-ten-Node
-
-                                    </div>
-                                    <div class="tagsarea">
-                                        <p class="tag">Indoor</p>
-                                        <p class="tag">Kinderen</p>
-                                    </div>
+                                <div class="tagsarea">
+                                    <p class="tag">Volwassenen</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="eventcardsrow6">
-                        <div class="eventcard">
-                            <div class="eventimage" id="event05">
-                                <div class="previewtext">
-                                    <h1>Ouderschap bijeenkomst: Hoe ga ik om met mijn kind?</h1>
-                                    <hr>
-                                    <div class="eventtextpre">
-                                        📅 Datum: 12/03/2022
-                                        <br>
-                                        📍 Locatie: Rue de la Poste 51, 1030 Schaerbeek
+                    <div class="eventcard">
+                        <div class="eventimage" id="event06">
+                            <div class="previewtext">
+                                <h1>Opvang: Mama Josée.</h1>
+                                <hr>
+                                <div class="eventtextpre">
+                                    📅 Datum: 04/04/2022
+                                    <br>
+                                    📍 Locatie: Rue de la Limite 67, 1210 Sint-Joost-ten-Node
 
-                                    </div>
-                                    <div class="tagsarea">
-                                        <p class="tag">Volwassenen</p>
-                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="eventcard">
-                            <div class="eventimage" id="event06">
-                                <div class="previewtext">
-                                    <h1>Opvang: Mama Josée.</h1>
-                                    <hr>
-                                    <div class="eventtextpre">
-                                        📅 Datum: 04/04/2022
-                                        <br>
-                                        📍 Locatie: Rue de la Limite 67, 1210 Sint-Joost-ten-Node
-
-                                    </div>
-                                    <div class="tagsarea">
-                                        <p class="tag">Indoor</p>
-                                        <p class="tag">Kinderen</p>
-                                    </div>
+                                <div class="tagsarea">
+                                    <p class="tag">Indoor</p>
+                                    <p class="tag">Kinderen</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="eventcardsrow7">
-                        <div class="eventcard">
-                            <div class="eventimage" id="event05">
-                                <div class="previewtext">
-                                    <h1>Ouderschap bijeenkomst: Hoe ga ik om met mijn kind?</h1>
-                                    <hr>
-                                    <div class="eventtextpre">
-                                        📅 Datum: 12/03/2022
-                                        <br>
-                                        📍 Locatie: Rue de la Poste 51, 1030 Schaerbeek
 
-                                    </div>
-                                    <div class="tagsarea">
-                                        <p class="tag">Volwassenen</p>
-                                    </div>
+
+                    <div class="eventcard volwassenen">
+                        <div class="eventimage" id="event05">
+                            <div class="previewtext">
+                                <h1>Ouderschap bijeenkomst: Hoe ga ik om met mijn kind?</h1>
+                                <hr>
+                                <div class="eventtextpre">
+                                    📅 Datum: 12/03/2022
+                                    <br>
+                                    📍 Locatie: Rue de la Poste 51, 1030 Schaerbeek
+
                                 </div>
-                            </div>
-                        </div>
-                        <div class="eventcard">
-                            <div class="eventimage" id="event06">
-                                <div class="previewtext">
-                                    <h1>Opvang: Mama Josée.</h1>
-                                    <hr>
-                                    <div class="eventtextpre">
-                                        📅 Datum: 04/04/2022
-                                        <br>
-                                        📍 Locatie: Rue de la Limite 67, 1210 Sint-Joost-ten-Node
-
-                                    </div>
-                                    <div class="tagsarea">
-                                        <p class="tag">Indoor</p>
-                                        <p class="tag">Kinderen</p>
-                                    </div>
+                                <div class="tagsarea">
+                                    <p class="tag">Volwassenen</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="eventcardsrow8">
-                        <div class="eventcard">
-                            <div class="eventimage" id="event05">
-                                <div class="previewtext">
-                                    <h1>Ouderschap bijeenkomst: Hoe ga ik om met mijn kind?</h1>
-                                    <hr>
-                                    <div class="eventtextpre">
-                                        📅 Datum: 12/03/2022
-                                        <br>
-                                        📍 Locatie: Rue de la Poste 51, 1030 Schaerbeek
+                    <div class="eventcard indoor kinderen">
+                        <div class="eventimage" id="event06">
+                            <div class="previewtext">
+                                <h1>Opvang: Mama Josée.</h1>
+                                <hr>
+                                <div class="eventtextpre">
+                                    📅 Datum: 04/04/2022
+                                    <br>
+                                    📍 Locatie: Rue de la Limite 67, 1210 Sint-Joost-ten-Node
 
-                                    </div>
-                                    <div class="tagsarea">
-                                        <p class="tag">Volwassenen</p>
-                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="eventcard">
-                            <div class="eventimage" id="event06">
-                                <div class="previewtext">
-                                    <h1>Opvang: Mama Josée.</h1>
-                                    <hr>
-                                    <div class="eventtextpre">
-                                        📅 Datum: 04/04/2022
-                                        <br>
-                                        📍 Locatie: Rue de la Limite 67, 1210 Sint-Joost-ten-Node
-
-                                    </div>
-                                    <div class="tagsarea">
-                                        <p class="tag">Indoor</p>
-                                        <p class="tag">Kinderen</p>
-                                    </div>
+                                <div class="tagsarea">
+                                    <p class="tag">Indoor</p>
+                                    <p class="tag">Kinderen</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="eventcardsrow9">
-                        <div class="eventcard">
-                            <div class="eventimage" id="event05">
-                                <div class="previewtext">
-                                    <h1>Ouderschap bijeenkomst: Hoe ga ik om met mijn kind?</h1>
-                                    <hr>
-                                    <div class="eventtextpre">
-                                        📅 Datum: 12/03/2022
-                                        <br>
-                                        📍 Locatie: Rue de la Poste 51, 1030 Schaerbeek
 
-                                    </div>
-                                    <div class="tagsarea">
-                                        <p class="tag">Volwassenen</p>
-                                    </div>
+
+                    <div class="eventcard volwassenen">
+                        <div class="eventimage" id="event05">
+                            <div class="previewtext">
+                                <h1>Ouderschap bijeenkomst: Hoe ga ik om met mijn kind?</h1>
+                                <hr>
+                                <div class="eventtextpre">
+                                    📅 Datum: 12/03/2022
+                                    <br>
+                                    📍 Locatie: Rue de la Poste 51, 1030 Schaerbeek
+
                                 </div>
-                            </div>
-                        </div>
-                        <div class="eventcard">
-                            <div class="eventimage" id="event06">
-                                <div class="previewtext">
-                                    <h1>Opvang: Mama Josée.</h1>
-                                    <hr>
-                                    <div class="eventtextpre">
-                                        📅 Datum: 04/04/2022
-                                        <br>
-                                        📍 Locatie: Rue de la Limite 67, 1210 Sint-Joost-ten-Node
-
-                                    </div>
-                                    <div class="tagsarea">
-                                        <p class="tag">Indoor</p>
-                                        <p class="tag">Kinderen</p>
-                                    </div>
+                                <div class="tagsarea">
+                                    <p class="tag">Volwassenen</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="eventcardsrow10">
-                        <div class="eventcard">
-                            <div class="eventimage" id="event05">
-                                <div class="previewtext">
-                                    <h1>Ouderschap bijeenkomst: Hoe ga ik om met mijn kind?</h1>
-                                    <hr>
-                                    <div class="eventtextpre">
-                                        📅 Datum: 12/03/2022
-                                        <br>
-                                        📍 Locatie: Rue de la Poste 51, 1030 Schaerbeek
+                    <div class="eventcard">
+                        <div class="eventimage" id="event06">
+                            <div class="previewtext">
+                                <h1>Opvang: Mama Josée.</h1>
+                                <hr>
+                                <div class="eventtextpre">
+                                    📅 Datum: 04/04/2022
+                                    <br>
+                                    📍 Locatie: Rue de la Limite 67, 1210 Sint-Joost-ten-Node
 
-                                    </div>
-                                    <div class="tagsarea">
-                                        <p class="tag">Volwassenen</p>
-                                    </div>
+                                </div>
+                                <div class="tagsarea">
+                                    <p class="tag">Indoor</p>
+                                    <p class="tag">Kinderen</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="eventcard">
-                            <div class="eventimage" id="event06">
-                                <div class="previewtext">
-                                    <h1>Opvang: Mama Josée.</h1>
-                                    <hr>
-                                    <div class="eventtextpre">
-                                        📅 Datum: 04/04/2022
-                                        <br>
-                                        📍 Locatie: Rue de la Limite 67, 1210 Sint-Joost-ten-Node
+                    </div>
 
-                                    </div>
-                                    <div class="tagsarea">
-                                        <p class="tag">Indoor</p>
-                                        <p class="tag">Kinderen</p>
-                                    </div>
+                    <div class="eventcard">
+                        <div class="eventimage" id="event05">
+                            <div class="previewtext">
+                                <h1>Ouderschap bijeenkomst: Hoe ga ik om met mijn kind?</h1>
+                                <hr>
+                                <div class="eventtextpre">
+                                    📅 Datum: 12/03/2022
+                                    <br>
+                                    📍 Locatie: Rue de la Poste 51, 1030 Schaerbeek
+
+                                </div>
+                                <div class="tagsarea">
+                                    <p class="tag">Volwassenen</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="eventcard">
+                        <div class="eventimage" id="event06">
+                            <div class="previewtext">
+                                <h1>Opvang: Mama Josée.</h1>
+                                <hr>
+                                <div class="eventtextpre">
+                                    📅 Datum: 04/04/2022
+                                    <br>
+                                    📍 Locatie: Rue de la Limite 67, 1210 Sint-Joost-ten-Node
+
+                                </div>
+                                <div class="tagsarea">
+                                    <p class="tag">Indoor</p>
+                                    <p class="tag">Kinderen</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="eventcard">
+                        <div class="eventimage" id="event05">
+                            <div class="previewtext">
+                                <h1>Ouderschap bijeenkomst: Hoe ga ik om met mijn kind?</h1>
+                                <hr>
+                                <div class="eventtextpre">
+                                    📅 Datum: 12/03/2022
+                                    <br>
+                                    📍 Locatie: Rue de la Poste 51, 1030 Schaerbeek
+
+                                </div>
+                                <div class="tagsarea">
+                                    <p class="tag">Volwassenen</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="eventcard">
+                        <div class="eventimage" id="event06">
+                            <div class="previewtext">
+                                <h1>Opvang: Mama Josée.</h1>
+                                <hr>
+                                <div class="eventtextpre">
+                                    📅 Datum: 04/04/2022
+                                    <br>
+                                    📍 Locatie: Rue de la Limite 67, 1210 Sint-Joost-ten-Node
+
+                                </div>
+                                <div class="tagsarea">
+                                    <p class="tag">Indoor</p>
+                                    <p class="tag">Kinderen</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="eventcard">
+                        <div class="eventimage" id="event05">
+                            <div class="previewtext">
+                                <h1>Ouderschap bijeenkomst: Hoe ga ik om met mijn kind?</h1>
+                                <hr>
+                                <div class="eventtextpre">
+                                    📅 Datum: 12/03/2022
+                                    <br>
+                                    📍 Locatie: Rue de la Poste 51, 1030 Schaerbeek
+
+                                </div>
+                                <div class="tagsarea">
+                                    <p class="tag">Volwassenen</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="eventcard">
+                        <div class="eventimage" id="event06">
+                            <div class="previewtext">
+                                <h1>Opvang: Mama Josée.</h1>
+                                <hr>
+                                <div class="eventtextpre">
+                                    📅 Datum: 04/04/2022
+                                    <br>
+                                    📍 Locatie: Rue de la Limite 67, 1210 Sint-Joost-ten-Node
+
+                                </div>
+                                <div class="tagsarea">
+                                    <p class="tag">Indoor</p>
+                                    <p class="tag">Kinderen</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="eventcard">
+                        <div class="eventimage" id="event05">
+                            <div class="previewtext">
+                                <h1>Ouderschap bijeenkomst: Hoe ga ik om met mijn kind?</h1>
+                                <hr>
+                                <div class="eventtextpre">
+                                    📅 Datum: 12/03/2022
+                                    <br>
+                                    📍 Locatie: Rue de la Poste 51, 1030 Schaerbeek
+
+                                </div>
+                                <div class="tagsarea">
+                                    <p class="tag">Volwassenen</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="eventcard">
+                        <div class="eventimage" id="event06">
+                            <div class="previewtext">
+                                <h1>Opvang: Mama Josée.</h1>
+                                <hr>
+                                <div class="eventtextpre">
+                                    📅 Datum: 04/04/2022
+                                    <br>
+                                    📍 Locatie: Rue de la Limite 67, 1210 Sint-Joost-ten-Node
+
+                                </div>
+                                <div class="tagsarea">
+                                    <p class="tag">Indoor</p>
+                                    <p class="tag">Kinderen</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="eventcard">
+                        <div class="eventimage" id="event05">
+                            <div class="previewtext">
+                                <h1>Ouderschap bijeenkomst: Hoe ga ik om met mijn kind?</h1>
+                                <hr>
+                                <div class="eventtextpre">
+                                    📅 Datum: 12/03/2022
+                                    <br>
+                                    📍 Locatie: Rue de la Poste 51, 1030 Schaerbeek
+
+                                </div>
+                                <div class="tagsarea">
+                                    <p class="tag">Volwassenen</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="eventcard">
+                        <div class="eventimage" id="event06">
+                            <div class="previewtext">
+                                <h1>Opvang: Mama Josée.</h1>
+                                <hr>
+                                <div class="eventtextpre">
+                                    📅 Datum: 04/04/2022
+                                    <br>
+                                    📍 Locatie: Rue de la Limite 67, 1210 Sint-Joost-ten-Node
+
+                                </div>
+                                <div class="tagsarea">
+                                    <p class="tag">Indoor</p>
+                                    <p class="tag">Kinderen</p>
                                 </div>
                             </div>
                         </div>
@@ -439,6 +485,18 @@
 
                 </div>
             </div>
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
         <div class="header_spacer"></div>
         <div id="info"></div>
