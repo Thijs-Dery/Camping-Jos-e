@@ -906,11 +906,54 @@ body {
 
 @media only screen and (max-width: 750px) {
 
+    .column {
+        height: 400px
+    }
+
     .eventsblock {
-        transform: scale(50%);
-        margin-top: -190px;
-        margin-left: -290px;
-        margin-bottom: -200px;
+        transform: scale(100%);
+        margin-top: 00px;
+        margin-bottom: -10px;
+    }
+
+    .eventcardsrow1 {
+        flex-direction: column;
+    }
+
+    .eventcardsrow2 {
+        flex-direction: column;
+    }
+
+    .eventcardsrow3 {
+        flex-direction: column;
+    }
+
+    .eventcardsrow4 {
+        flex-direction: column;
+    }
+
+    .eventcardsrow5 {
+        flex-direction: column;
+    }
+
+    .eventcardsrow6 {
+        flex-direction: column;
+    }
+
+    .eventcardsrow7 {
+        flex-direction: column;
+    }
+
+    .eventcardsrow8 {
+        flex-direction: column;
+    }
+
+    .eventcardsrow9 {
+        flex-direction: column;
+    }
+
+    .eventcardsrow10 {
+        flex-direction: column;
     }
 
     .topnav {
@@ -1130,4 +1173,14 @@ body {
         font-size: 20px;
     }
 
+    .column {
+        height: 400px
+    }
+
+    .eventsblock {
+        transform: scale(60%);
+        margin-top: 00px;
+        margin-left: -110px;
+        margin-bottom: -10px;
+    }
 }
